@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rosario&display=swap" rel="stylesheet">
+    
+    <!-- including custom css -->
+    <link rel="stylesheet" href="style.css">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title> {% block title %} {% endblock title %} | Healer</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="">
+        <header class=" head text-gray-600 body-font">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <span class="ml-3 text-xl"><b>Healer</b></span>
+                </a>
+                <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <a class="mr-5 text-gray-600 font-bold" href="/">Home</a>
+                    <a class="mr-5 hover:text-gray-900" href="/foryou">For You</a>
+                    <a class="mr-5 hover:text-gray-900" href="/starcorner">Star Corner</a>
+                    <a class="mr-5 hover:text-gray-900" href="/activities">Activities</a>
+                    <a class="mr-5 hover:text-gray-900" href="/learning">Learning</a>
+                    <a class="mr-5 hover:text-gray-900" href="/signup">SignUp</a>
+                    <a class="mr-5 hover:text-gray-900" href="/login">Login</a>
+                </nav>
+            </div>
+    </div>
+
+    {% block body %}
+
+    {% endblock body %}
+    
+    <div class="footer-1">
+        <footer class="text-gray-600 body-font">
+            <div
+                class="container px-5  pt-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+                <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                        <span class="color-own color-ownb media3 ml-0 text-xl"><b>Healer</b></span>
+                    </a>
+                    <p class="cstm-btn-color mt-2 text-sm">A mental heath & wellness website with it's own integrated chatbot for an easy and personalized response.</p>
+                </div>
+                <div class="lg:w-1/4 md:w-2/2 w-full px-14 media6">
+                    <h2 class="color-own media4 title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Quick Links</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Feature</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Demo</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Contact</a>
+                        </li>
+                        <div class="lg:w-4/4 md:w-2/2 w-full mt-5">
+                            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Resources</h2>
+                            <nav class="list-none mb-10">
+                                <li>
+                                    <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-600 hover:text-gray-800">Terms of Services</a>
+                                </li>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4 media5">
+                    <h2 class="color-own title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Contact</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">contact@healer.com</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 my-9 py-3">123 42312 122</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="followon color-own title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Follow us on</h2>
+                    <nav class="icons list-none mb-10">
+                        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                            <a class="text-gray-500">
+                                <i class="clr meetup fab fa-meetup"></i>
+                            </a>
+                            <a class="ml-3 text-gray-500">
+                                <i class="clr twitter fab fa-twitter"></i>
+                            </a>
+                            <a class="ml-3 text-gray-500">
+                                <i class="clr skype fab fa-skype"></i>
+                            </a>
+                            <a class="ml-3 text-gray-500">
+                                <i class="clr facebook fab fa-facebook"></i>
+                            </a>
+                        </span>
+                    </nav>
+                </div>
+            </div>
+    </div>
+    <div class="">
+        <p class="bg-grey-500 text-1xl text-grey text-center inset-x-0 bottom-0 p-1 "">Powered by &copy; Healer 2022-23
+            </p>
+          </footer>
+    </div>
+
+</body>
+</html>

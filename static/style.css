@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    color: #333333;
+}
+.head{
+    background-color: #FEFBF5;
+}
+.btn-cstm {
+    color: #016A61;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid #016A61;
+}
+.btn-cstme{
+    color: #016A61;
+    font-size: 16px;
+    font-weight: 500;
+}
+.clr1{
+    background-color:#faf9f5 ;
+}
+
+.header-h1 {
+    color: #313E84;
+    font-family: Rosario;
+    font-weight: 900;
+    font-size: 4rem;
+}
+.header-s3-1 {
+    color: #313E84;
+    font-family: Rosario;
+    font-weight: 900;
+    font-size: 3.6rem;
+}
+.header-h1-cstm{
+    font-size: 42px;
+}
+.color-own{
+    color: #313E84;
+    font-weight: 700;
+    font-size: 17px;
+}
+.color-own-2{
+    color: #313E84;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.color-ownb{
+    font-size: 19px;
+    font-family: Roboto;
+}
+.cstm-back{
+    background-color: #F2E9DA;
+}
+.cstm-btn-color{
+    color: #333333;
+    font-weight: 450;
+}
+.cstm-backColor{
+    background-color: #FC8B5B;
+}
+.clr{
+    font-size: 27px;
+}
+.meetup{
+    color: rgb(223, 23, 23);
+    font-size: 30px;
+}
+.twitter{
+    color: rgb(31, 124, 231);
+}
+.skype{
+    color: rgb(90, 194, 235);
+}
+.facebook{
+    color: rgb(35, 79, 221);
+}
+.same{
+    line-height: 39px;
+}
+.same2{
+    line-height: 50px;
+}
+.same3{
+    line-height: 66px;
+}
+
+/* starting media queries */
+@media only screen and (max-width:450px){
+    .header-h1 span{
+        display: block;
+    }
+    .header-h1{
+        font-size: 40px;
+    }
+    .img1{
+        display: none;
+    }
+    .clr{
+        margin-top: 0px;
+        margin-left: 42px;
+        margin-bottom: 9px;
+    }
+    .sec1-d1{
+        padding: 0px;
+    }
+    .header-s3-1{
+        padding: 0px;
+        font-size: 35px;
+        margin-top: -36px;
+        text-align: center;
+        margin-left: 31px;
+        word-spacing: -1px;
+    }
+    .cstm-btn-color2{
+        font-size: 16px;
+        text-align: center;
+        width: 322px;
+    }
+    .cstm-btn-color2{
+        font-size: 16px;
+    }
+    .section-4{
+        margin-top: -45px;
+        font-size: 13px;
+    }
+    .media2{
+        font-size: 12px;
+    }
+    .media21{
+        font-size: 10px;
+    }
+    .footer-1{
+        margin-top: -80px
+    }
+    .media3{
+        font-size: 23px;
+        font-weight: 800;
+    }
+    .same{
+        line-height: 30px;
+    }
+    .same2{
+        line-height: 40px;
+    }
+    .same3{
+        line-height: 40px;
+    }
+    .media4{
+        text-align: center;
+        margin-top: 19px;
+    }
+    .media5{
+        text-align: center;
+        font-size: 18px;
+    }
+    .media6{
+        text-align: center
+    }
+    .followon{
+        text-align: center;
+        font-size: 22px;
+    }
+    .icons{
+        margin-left: -33px;
+        margin-bottom: -4px;
+    }
+    
+}

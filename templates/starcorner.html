@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Star Corner{% endblock title %}
+
+{% block body %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="testimonial">
+    <div class=" img1 lg:max-w-lg lg:w-full md:w-1/2 w-5/6 pl-0">
+        {% load static %}
+        <img class="object-cover object-center rounded" width="150" height="150" alt="" src={%static 'assets/img-1.png' %}>
+    </div>
+    <div class="testimonial--text">
+        <strong class="testimonial--title">Madhav Bhargav, Psychology - India</strong>
+        <div class="testimonial--summary"></div>
+        <div class="testimonial--icon"></div>
+        <blockquote class="testimonial--quote"><p>Trinity education not only provided me with the skills and techniques that I needed to be a successful researcher; but more importantly, it provided me with a much deeper humanistic experience that made me a confident and a compassionate human. I felt a connection to Trinity and decided to stay. I was elected to work for a year after graduation as Vice President of Trinity Graduate Students’ Union where I represented 4600+ postgraduates in Trinity. Following this, I worked in Google and then decided to return to Trinity.  I am now pursuing my PhD in the Department of Psychology, which is something I had always wanted to do.</p></blockquote>
+    </div>
+</div>
+{% endblock body %}

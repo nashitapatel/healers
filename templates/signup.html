@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+
+</head>
+
+<body class="text-center">
+
+
+    <main class="form-signin w-100 m-auto">
+        <!-- <form method="post" name="signup_form" action="" onsubmit="return validateForm()"> -->
+            <form method="post" name="signup_form" action="/signup" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+
+            <div class="form-floating" id="name">
+
+                <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username"
+                    Required>
+                <div class="error" style="color: red;font-weight:600; align-self:flex-start;">
+
+                </div>
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating" id="user_email">
+                <input type="email" name="useremail" class="form-control" id="floatingInput" placeholder="Email"
+                    Required>
+                <div class="error" style="color: red;font-weight:600; align-self:flex-start;">
+
+                </div>
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating" id="password">
+                <input type="password" name="userpassword" class="form-control" id="floatingPassword"
+                    placeholder="Password" Required>
+
+                <div class="error" style="color: red;font-weight:600; align-self:flex-start;">
+
+                </div>
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating" id="cpassword">
+                <input type="password" name="confirmpassword" class="form-control" id="pass2"
+                    placeholder="Confirm your Password" Required>
+                <div class="error" style="color: red;font-weight:600; align-self:flex-start;">
+
+                </div>
+                <label for="floatingPassword">Confirm Password</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <p class="mt-5 mb-3 text-muted">&copy; Healer–2022</p>
+        </form>
+    </main>
+
+    <script>
+
+        const setError = (id, error) => {
+            // set error inside tag of id error
+            let ele = document.getElementById(id);
+            ele.getElementsByClassName('error')[0].innerHTML = error
+        }
+
+        const clearErrors = () => {
+            let errors = document.getElementsByClassName("error")
+
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+
+        }
+        
+
+        function onlyAlphabets(str) {
+            var regex = /^[a-zA-Z]+$/;
+            if (regex.test(str)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        const validateForm = () => {
+
+            let returnValue = true;
+            clearErrors();
+
+            let name = document.forms['signup_form']['username'].value;
+            let email = document.forms['signup_form']['useremail'].value;
+            let password = document.forms['signup_form']['userpassword'].value;
+            let confirmpassword = document.forms['signup_form']['confirmpassword'].value;
+
+            if (name.length < 5) {
+                setError("name", "*Length of name is too short, have more then 5 char name")
+                returnValue = false;
+            }
+            if (name.length > 20) {
+                setError("name", "*Length should be less then 20")
+                returnValue = false;
+            }
+            if (name.length == 0) {
+                setError("name", "*Name cannot be empty")
+                returnValue = false;
+            }
+
+            if(!onlyAlphabets(name)){
+                setError("name", "*Name should only contains characters")
+                returnValue = false;
+            }
+
+            if (password.length < 6) {
+                setError("password", "*Password length should be greater then 6")
+                returnValue = false;
+            }
+
+            if (!validateEmail(email)) {
+                setError("user_email", "*Provide a valid email")
+                returnValue = false;
+            }
+
+            if (password != confirmpassword) {
+                setError("cpassword", "**Pasword and confirm password should match!!")
+                returnValue = false;
+            }
+
+            return returnValue;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
